@@ -3,38 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>What's Up Tracker - Messages & Stories</title>
+    <title>WhatsApp Tracker - Phone Tracker</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="matrix-bg"></div>
+    
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <h1>📱 What's Up Tracker</h1>
-            <p>Track all your messages and stories in one place</p>
+            <div class="terminal-header">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+            </div>
+            <h1>$ WHATSAPP TRACKER</h1>
+            <p class="terminal-text">>>> Phone Number Location & Activity Tracker <<<</p>
         </header>
 
-        <!-- Navigation Tabs -->
-        <nav class="tabs">
-            <button class="tab-button active" data-tab="messages">💬 Messages</button>
-            <button class="tab-button" data-tab="stories">📖 Stories</button>
-        </nav>
+        <!-- Main Content -->
+        <div class="content-wrapper">
+            <!-- Input Section -->
+            <section class="input-section">
+                <h2>$ INSERT PHONE NUMBER</h2>
+                <div class="input-group">
+                    <input 
+                        type="text" 
+                        id="phoneInput" 
+                        class="phone-input" 
+                        placeholder="Enter phone number (e.g., +1234567890)"
+                        autocomplete="off"
+                    >
+                    <button id="addBtn" class="add-button">>>> TRACK</button>
+                </div>
+                <p class="info-text">$ Status: Ready to track...</p>
+            </section>
 
-        <!-- Messages Section -->
-        <section id="messages" class="tab-content active">
-            <h2>Recent Messages</h2>
-            <div class="messages-grid">
-                <!-- Messages will be populated here -->
-            </div>
-        </section>
+            <!-- Statistics -->
+            <section class="stats-section">
+                <div class="stat-box">
+                    <h3>TOTAL TRACKED</h3>
+                    <p id="totalCount" class="stat-number">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>ACTIVE</h3>
+                    <p id="activeCount" class="stat-number">0</p>
+                </div>
+                <div class="stat-box">
+                    <h3>INACTIVE</h3>
+                    <p id="inactiveCount" class="stat-number">0</p>
+                </div>
+            </section>
 
-        <!-- Stories Section -->
-        <section id="stories" class="tab-content">
-            <h2>Active Stories</h2>
-            <div class="stories-grid">
-                <!-- Stories will be populated here -->
-            </div>
-        </section>
+            <!-- Tabs -->
+            <nav class="tabs">
+                <button class="tab-button active" data-tab="messages">$ MESSAGES</button>
+                <button class="tab-button" data-tab="stories">$ STORIES</button>
+                <button class="tab-button" data-tab="tracked">$ TRACKED NUMBERS</button>
+            </nav>
+
+            <!-- Messages Section -->
+            <section id="messages" class="tab-content active">
+                <h2>$ RECENT MESSAGES</h2>
+                <div class="messages-list">
+                    <!-- Messages will be populated here -->
+                </div>
+            </section>
+
+            <!-- Stories Section -->
+            <section id="stories" class="tab-content">
+                <h2>$ ACTIVE STORIES</h2>
+                <div class="stories-list">
+                    <!-- Stories will be populated here -->
+                </div>
+            </section>
+
+            <!-- Tracked Numbers Section -->
+            <section id="tracked" class="tab-content">
+                <h2>$ PHONE NUMBER DATABASE</h2>
+                <div class="tracked-list">
+                    <div class="empty-db">No phone numbers tracked yet...</div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>$ WARNING: This is for educational purposes only ⚠️</p>
+            <p class="blink">$ TRACKER v2.1 | Last Updated: <span id="timestamp"></span></p>
+        </footer>
     </div>
 
     <script src="script.js"></script>
