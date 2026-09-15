@@ -3,95 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WhatsApp Tracker - Phone Tracker</title>
+    <title>WhatsApp Tracker - Messages & Stories</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="matrix-bg"></div>
-    
     <div class="container">
         <!-- Header -->
         <header class="header">
-            <div class="terminal-header">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-            </div>
-            <h1>$ WHATSAPP TRACKER</h1>
-            <p class="terminal-text">>>> Phone Number Location & Activity Tracker <<<</p>
+            <h1>📱 WhatsApp Tracker</h1>
+            <p>View messages and stories by phone number</p>
         </header>
 
-        <!-- Main Content -->
-        <div class="content-wrapper">
-            <!-- Input Section -->
-            <section class="input-section">
-                <h2>$ INSERT PHONE NUMBER</h2>
-                <div class="input-group">
-                    <input 
-                        type="text" 
-                        id="phoneInput" 
-                        class="phone-input" 
-                        placeholder="Enter phone number (e.g., +1234567890)"
-                        autocomplete="off"
-                    >
-                    <button id="addBtn" class="add-button">>>> TRACK</button>
-                </div>
-                <p class="info-text">$ Status: Ready to track...</p>
-            </section>
+        <!-- Search/Input Section -->
+        <section class="search-section">
+            <div class="search-box">
+                <input 
+                    type="text" 
+                    id="phoneInput" 
+                    class="phone-input" 
+                    placeholder="Enter phone number (e.g., +1-555-123-4567)"
+                    autocomplete="off"
+                >
+                <button id="searchBtn" class="search-button">🔍 Search</button>
+            </div>
+            <div class="contact-shortcuts">
+                <button class="quick-contact" onclick="searchByNumber('+1-555-0001')">Alice (+1-555-0001)</button>
+                <button class="quick-contact" onclick="searchByNumber('+1-555-0002')">Bob (+1-555-0002)</button>
+                <button class="quick-contact" onclick="searchByNumber('+1-555-0003')">Charlie (+1-555-0003)</button>
+            </div>
+        </section>
 
-            <!-- Statistics -->
-            <section class="stats-section">
-                <div class="stat-box">
-                    <h3>TOTAL TRACKED</h3>
-                    <p id="totalCount" class="stat-number">0</p>
+        <!-- Contact Info Display -->
+        <section id="contactInfo" class="contact-info hidden">
+            <div class="contact-header">
+                <div class="contact-avatar" id="contactAvatar"></div>
+                <div class="contact-details">
+                    <h2 id="contactName">Contact Name</h2>
+                    <p id="contactPhone">Phone: +1-555-0001</p>
+                    <p id="contactStatus">Status: Online</p>
                 </div>
-                <div class="stat-box">
-                    <h3>ACTIVE</h3>
-                    <p id="activeCount" class="stat-number">0</p>
-                </div>
-                <div class="stat-box">
-                    <h3>INACTIVE</h3>
-                    <p id="inactiveCount" class="stat-number">0</p>
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Tabs -->
-            <nav class="tabs">
-                <button class="tab-button active" data-tab="messages">$ MESSAGES</button>
-                <button class="tab-button" data-tab="stories">$ STORIES</button>
-                <button class="tab-button" data-tab="tracked">$ TRACKED NUMBERS</button>
-            </nav>
+        <!-- Navigation Tabs -->
+        <nav class="tabs" id="tabs" style="display: none;">
+            <button class="tab-button active" data-tab="messages">💬 Messages</button>
+            <button class="tab-button" data-tab="stories">📖 Stories</button>
+            <button class="tab-button" data-tab="info">ℹ️ Info</button>
+        </nav>
 
-            <!-- Messages Section -->
-            <section id="messages" class="tab-content active">
-                <h2>$ RECENT MESSAGES</h2>
-                <div class="messages-list">
-                    <!-- Messages will be populated here -->
-                </div>
-            </section>
+        <!-- Messages Section -->
+        <section id="messages" class="tab-content active">
+            <h2>Messages</h2>
+            <div class="messages-container">
+                <!-- Messages will be populated here -->
+            </div>
+        </section>
 
-            <!-- Stories Section -->
-            <section id="stories" class="tab-content">
-                <h2>$ ACTIVE STORIES</h2>
-                <div class="stories-list">
-                    <!-- Stories will be populated here -->
-                </div>
-            </section>
+        <!-- Stories Section -->
+        <section id="stories" class="tab-content">
+            <h2>Stories</h2>
+            <div class="stories-container">
+                <!-- Stories will be populated here -->
+            </div>
+        </section>
 
-            <!-- Tracked Numbers Section -->
-            <section id="tracked" class="tab-content">
-                <h2>$ PHONE NUMBER DATABASE</h2>
-                <div class="tracked-list">
-                    <div class="empty-db">No phone numbers tracked yet...</div>
-                </div>
-            </section>
+        <!-- Info Section -->
+        <section id="info" class="tab-content">
+            <h2>Contact Information</h2>
+            <div class="info-container">
+                <!-- Info will be populated here -->
+            </div>
+        </section>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="empty-state">
+            <p>👆 Enter a phone number above to view messages and stories</p>
         </div>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <p>$ WARNING: This is for educational purposes only ⚠️</p>
-            <p class="blink">$ TRACKER v2.1 | Last Updated: <span id="timestamp"></span></p>
-        </footer>
     </div>
 
     <script src="script.js"></script>
