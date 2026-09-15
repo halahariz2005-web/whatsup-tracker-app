@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's Up Tracker - Messages & Stories</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>📱 What's Up Tracker</h1>
+            <p>Track all your messages and stories in one place</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="tabs">
+            <button class="tab-button active" data-tab="messages">💬 Messages</button>
+            <button class="tab-button" data-tab="stories">📖 Stories</button>
+        </nav>
+
+        <!-- Messages Section -->
+        <section id="messages" class="tab-content active">
+            <h2>Recent Messages</h2>
+            <div class="messages-grid">
+                <!-- Messages will be populated here -->
+            </div>
+        </section>
+
+        <!-- Stories Section -->
+        <section id="stories" class="tab-content">
+            <h2>Active Stories</h2>
+            <div class="stories-grid">
+                <!-- Stories will be populated here -->
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
